@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: upaguru-core
+
+logging:
+  level:
+    root: INFO
+
+
+feign:
+  client:
+    config:
+      copilotClient:
+        url: http://localhost:8084
+      mindClient:
+        url: http://localhost:8082
+      senseClient:
+        url: http://localhost:8083
+
+# Swagger / SpringDoc OpenAPI
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
+  show-actuator: true
+
+# Actuator endpoints for debugging and monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
