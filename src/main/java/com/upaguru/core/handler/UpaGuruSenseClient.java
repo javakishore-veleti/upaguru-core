@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "senseClient", url = "${feign.client.config.senseClient.url}")
 public interface UpaGuruSenseClient {
 
-    @PostMapping("/api/sense")
+    @PostMapping("/api/prompt/process")
     OrchestrationResponse callSense(@RequestBody OrchestrationRequest request);
 }

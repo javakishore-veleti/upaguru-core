@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "mindClient", url = "${feign.client.config.mindClient.url}")
 public interface UpaGuruMindClient {
 
-    @PostMapping("/api/mind")
+    @PostMapping("/api/embeddings")
     OrchestrationResponse callMind(@RequestBody OrchestrationRequest request);
 }

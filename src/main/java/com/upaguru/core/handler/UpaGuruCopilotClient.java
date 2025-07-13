@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "copilotClient", url = "${feign.client.config.copilotClient.url}")
 public interface UpaGuruCopilotClient {
 
-    @PostMapping("/api/copilot")
+    @PostMapping("/api/lesson-plan")
     OrchestrationResponse callCopilot(@RequestBody OrchestrationRequest request);
 }
